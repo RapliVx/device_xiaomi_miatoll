@@ -155,6 +155,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
+# Miuicamera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-miatoll/MiuiCamera.mk)
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
@@ -177,17 +180,13 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
+    SM6250Aperture \
     SM6250DeviceAsWebcam \
     SM6250Frameworks \
     SM6250Settings \
     SM6250SystemUI \
     TelephonyResCommon \
     WifiOverlay
-
-PRODUCT_PACKAGES += \
-    SM6250Aperture \
-    SM6250LineageDialer \
-    SM6250LineageSDK
 
 # Partitions
 PRODUCT_PACKAGES += \
