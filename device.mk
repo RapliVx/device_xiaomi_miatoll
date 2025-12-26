@@ -348,7 +348,7 @@ PRODUCT_PACKAGES += \
 
 # TimeKeep
 PRODUCT_PACKAGES += \
-    TimeKeep
+    com.sony.timekeep.apex
 
 # UFFD GC
 PRODUCT_ENABLE_UFFD_GC := true
