@@ -347,8 +347,8 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
 
 # TimeKeep
-PRODUCT_PACKAGES += \
-    com.sony.timekeep.apex
+# PRODUCT_PACKAGES += \
+#    com.sony.timekeep.apex
 
 # UFFD GC
 PRODUCT_ENABLE_UFFD_GC := true
@@ -394,3 +394,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
+
+# MIUI CAMERA
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-miatoll/MiuiCamera.mk)
