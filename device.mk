@@ -12,6 +12,15 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Dolby
+TARGET_USES_DOLBY := true
+
+PRODUCT_PACKAGES += \
+    DSPVolumeSynchronizer
+
+# Signing
+-include vendor/lineage-priv/keys/keys.mk
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
