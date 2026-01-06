@@ -3,15 +3,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 29
-
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
-# Call the proprietary setup
-$(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
-
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -24,9 +15,6 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# XiaomiParts
-$(call inherit-product, device/xiaomi/surya/parts/parts.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -185,10 +173,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-
-# Network
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
 # NFC
 PRODUCT_PACKAGES += \
